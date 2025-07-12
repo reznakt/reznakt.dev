@@ -1,6 +1,7 @@
 import type { NavigateOptions } from "react-router-dom";
 
 import { HeroUIProvider } from "@heroui/system";
+import React from "react";
 import { useHref, useNavigate } from "react-router-dom";
 
 declare module "@react-types/shared" {
@@ -9,10 +10,13 @@ declare module "@react-types/shared" {
   }
 }
 
-export function Provider({ children }: { children: React.ReactNode }) {
+export function Provider({
+  children,
+}: Readonly<{ children: React.ReactNode }>): React.ReactElement {
   const navigate = useNavigate();
 
   return (
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     <HeroUIProvider navigate={navigate} useHref={useHref}>
       {children}
     </HeroUIProvider>

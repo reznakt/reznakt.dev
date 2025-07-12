@@ -4,9 +4,7 @@ import { Navbar } from "@/components/navbar";
 
 export default function DefaultLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{ children: React.ReactNode }>): React.ReactElement {
   return (
     <div className="relative flex flex-col h-screen">
       <Navbar />
@@ -15,9 +13,9 @@ export default function DefaultLayout({
       </main>
       <footer className="w-full flex items-center justify-center py-3">
         <Link
-          isExternal
           className="flex items-center gap-1 text-current"
           href="https://heroui.com"
+          isExternal
           title="heroui.com homepage"
         >
           <span className="text-default-600">Powered by</span>

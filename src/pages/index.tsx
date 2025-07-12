@@ -1,14 +1,15 @@
+import { Code } from "@heroui/code";
 import { Link } from "@heroui/link";
 import { Snippet } from "@heroui/snippet";
-import { Code } from "@heroui/code";
 import { button as buttonStyles } from "@heroui/theme";
 
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
 import { GithubIcon } from "@/components/icons";
+import { subtitle, title } from "@/components/primitives";
+import { siteConfig } from "@/config/site";
 import DefaultLayout from "@/layouts/default";
+import React from "react";
 
-export default function IndexPage() {
+export default function IndexPage(): React.ReactElement {
   return (
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
@@ -26,20 +27,20 @@ export default function IndexPage() {
 
         <div className="flex gap-3">
           <Link
-            isExternal
             className={buttonStyles({
               color: "primary",
               radius: "full",
               variant: "shadow",
             })}
             href={siteConfig.links.docs}
+            isExternal
           >
             Documentation
           </Link>
           <Link
-            isExternal
-            className={buttonStyles({ variant: "bordered", radius: "full" })}
+            className={buttonStyles({ radius: "full", variant: "bordered" })}
             href={siteConfig.links.github}
+            isExternal
           >
             <GithubIcon size={20} />
             GitHub

@@ -1,7 +1,5 @@
 {
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
+  "build": { "dockerfile": "Dockerfile" },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -15,9 +13,7 @@
       ]
     }
   },
-  "containerEnv": {
-    "SHELL": "/bin/bash"
-  },
+  "containerEnv": { "SHELL": "/bin/bash" },
   "remoteUser": "bun",
   "containerUser": "bun",
   "mounts": [

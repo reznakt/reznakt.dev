@@ -1,12 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 
-import IndexPage from "@/pages/index";
-import DocsPage from "@/pages/docs";
-import PricingPage from "@/pages/pricing";
-import BlogPage from "@/pages/blog";
 import AboutPage from "@/pages/about";
+import BlogPage from "@/pages/blog";
+import DocsPage from "@/pages/docs";
+import IndexPage from "@/pages/index";
+import PricingPage from "@/pages/pricing";
 
-function App() {
+function App(): React.ReactElement {
   return (
     <Routes>
       <Route element={<IndexPage />} path="/" />

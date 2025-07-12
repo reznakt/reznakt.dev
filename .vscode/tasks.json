@@ -1,13 +1,50 @@
 {
   "version": "2.0.0",
   "tasks": [
-    { "label": "install", "type": "process", "command": "bun", "args": ["install"] },
-    { "label": "dev", "type": "process", "command": "bun", "args": ["dev"], "isBackground": true },
+    {
+      "label": "install",
+      "type": "process",
+      "command": "bun",
+      "args": ["install"]
+    },
+    {
+      "label": "dev",
+      "type": "process",
+      "command": "bun",
+      "args": ["dev"],
+      "isBackground": true
+    },
+    {
+      "label": "build",
+      "type": "process",
+      "command": "bun",
+      "args": ["build"]
+    },
+    {
+      "label": "preview",
+      "type": "process",
+      "command": "bun",
+      "args": ["preview"],
+      "isBackground": true
+    },
     { "label": "lint", "type": "process", "command": "bun", "args": ["lint"] },
-    { "label": "lint:fix", "type": "process", "command": "bun", "args": ["lint:fix"] },
-    { "label": "format", "type": "process", "command": "bun", "args": ["format"] },
-    { "label": "format:fix", "type": "process", "command": "bun", "args": ["format:fix"] },
-    { "label": "client", "type": "process", "command": "bun", "args": ["client"] },
-    { "label": "server", "type": "process", "command": "bun", "args": ["server"] }
+    {
+      "label": "lint:fix",
+      "type": "process",
+      "command": "bun",
+      "args": ["lint:fix"]
+    },
+    {
+      "label": "format",
+      "type": "process",
+      "command": "bun",
+      "args": ["format"]
+    },
+    {
+      "label": "format:fix",
+      "type": "process",
+      "command": "bun",
+      "args": ["format:fix"]
+    }
   ]
 }
