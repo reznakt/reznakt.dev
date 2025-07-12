@@ -1,0 +1,5 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "task.autoDetect": "off",
+  "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
+}

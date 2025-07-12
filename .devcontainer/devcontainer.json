@@ -1,0 +1,29 @@
+{
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "aaron-bond.better-comments",
+        "dbaeumer.vscode-eslint",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
+        "oven.bun-vscode",
+        "SanaAjani.taskrunnercode",
+        "YoavBls.pretty-ts-errors"
+      ]
+    }
+  },
+  "containerEnv": {
+    "SHELL": "/bin/bash"
+  },
+  "remoteUser": "bun",
+  "containerUser": "bun",
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/bun/.ssh,type=bind,consistency=consistent",
+    "source=${localEnv:HOME}/.gitconfig,target=/home/bun/.gitconfig,type=bind,consistency=consistent",
+    "source=pre-commit-cache,target=/home/bun/.cache/pre-commit,type=volume"
+  ],
+  "postCreateCommand": "pre-commit install"
+}
