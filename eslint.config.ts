@@ -5,7 +5,6 @@ import eslintConfigPrettier from "eslint-config-prettier";
 import onlyWarn from "eslint-plugin-only-warn";
 import perfectionist from "eslint-plugin-perfectionist";
 import react from "eslint-plugin-react";
-import sonarjs from "eslint-plugin-sonarjs";
 import { fileURLToPath } from "node:url";
 import tseslint from "typescript-eslint";
 
@@ -18,7 +17,6 @@ export default tseslint.config(
   tseslint.configs.stylisticTypeChecked,
   eslintNestJs.configs.flatRecommended,
   react.configs.flat["jsx-runtime"],
-  sonarjs.configs.recommended,
   perfectionist.configs["recommended-natural"],
   {
     languageOptions: {

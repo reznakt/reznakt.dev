@@ -1,10 +1,8 @@
+import "@/styles/globals.css";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-
-import "@/styles/globals.css";
-import App from "./App.tsx";
-import { Provider } from "./provider.tsx";
+import { App } from "./app.tsx";
+import { WebGlChecker } from "./components/webgl-checker.tsx";
 
 const root = document.getElementById("root");
 
@@ -14,10 +12,7 @@ if (!root) {
 
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider>
-        <App />
-      </Provider>
-    </BrowserRouter>
+    <WebGlChecker />
+    <App />
   </React.StrictMode>,
 );
