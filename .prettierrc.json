@@ -6,6 +6,7 @@
     "prettier-plugin-organize-imports",
     "prettier-plugin-package",
     "prettier-plugin-prisma",
-    "prettier-plugin-sh"
+    "prettier-plugin-sh",
+    "prettier-plugin-tailwindcss"
   ]
 }

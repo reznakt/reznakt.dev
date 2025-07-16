@@ -228,7 +228,10 @@ interface VantaRippleOptions extends VantaBaseOptions, VantaNeedsThree {
   amplitudeFactor?: number;
   /** Background color (hex, e.g. 0xf6f6f6) */
   backgroundColor?: number;
-  /** Optional blur factor for shader (referenced in fragment shader but not set in defaults) */
+  /**
+   * Optional blur factor for shader (referenced in fragment shader but not set
+   * in defaults)
+   */
   blurFactor?: number;
   /** Primary color for the ripple highlights (hex, e.g. 0x60b25) */
   color1?: number;

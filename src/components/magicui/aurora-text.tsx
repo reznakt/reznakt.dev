@@ -30,7 +30,7 @@ export const AuroraText = memo(
         <span className="sr-only">{children}</span>
         <span
           aria-hidden="true"
-          className="relative animate-aurora bg-[length:200%_auto] bg-clip-text text-transparent"
+          className="animate-aurora relative bg-[length:200%_auto] bg-clip-text text-transparent"
           style={gradientStyle}
         >
           {children}

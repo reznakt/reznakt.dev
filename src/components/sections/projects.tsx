@@ -27,10 +27,10 @@ export function ProjectsSection(): React.ReactElement {
       }}
     >
       <div>
-        <h1 className="text-5xl font-bold mb-4">Projects</h1>
-        <p className="max-w-xl mx-auto flex items-center">
+        <h1 className="mb-4 text-5xl font-bold">Projects</h1>
+        <p className="mx-auto flex max-w-xl items-center">
           Building software in
-          <span className="m-2 font-bold text-purple-400 inline-block">
+          <span className="m-2 inline-block font-bold text-purple-400">
             <WordRotate words={shuffledTechnologies} />
           </span>
         </p>

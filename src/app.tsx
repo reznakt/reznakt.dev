@@ -11,7 +11,7 @@ export function App(): React.ReactElement {
         <Menu />
       </header>
       <main>
-        <div className="fixed inset-0 pointer-events-none z-50 shadow-[inset_0_0_200px_rgba(0,0,0,1)]" />
+        <div className="pointer-events-none fixed inset-0 z-50 shadow-[inset_0_0_200px_rgba(0,0,0,1)]" />
         <HomeSection />
         <EducationSection />
         <ProjectsSection />

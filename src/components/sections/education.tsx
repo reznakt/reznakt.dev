@@ -8,8 +8,8 @@ export function EducationSection(): React.ReactElement {
       vanta={{ effect: waves, effectOptions: { gyroControls: true } }}
     >
       <div>
-        <h1 className="text-5xl font-bold mb-4">Education</h1>
-        <p className="max-w-xl mx-auto">
+        <h1 className="mb-4 text-5xl font-bold">Education</h1>
+        <p className="mx-auto max-w-xl">
           This is what I've learned over the years...
         </p>
       </div>

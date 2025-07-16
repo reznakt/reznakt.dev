@@ -16,11 +16,11 @@ export function HomeSection(): React.ReactElement {
       }}
     >
       <div>
-        <h1 className="text-5xl font-bold mb-4">
+        <h1 className="mb-4 text-5xl font-bold">
           Hi, I'm
           <AuroraText className="m-2">Tom</AuroraText>
         </h1>
-        <p className="max-w-xl mx-auto">
+        <p className="mx-auto max-w-xl">
           I'm a web developer passionate about interactive design.
         </p>
       </div>

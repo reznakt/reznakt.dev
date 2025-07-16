@@ -47,13 +47,13 @@ export function Menu(): React.ReactElement {
       maxWidth="xl"
     >
       <NavbarBrand>
-        <Link className="font-bold flex gap-4" href="#home">
+        <Link className="flex gap-4 font-bold" href="#home">
           <FaTerminal size={24} />
           Tomáš Režňák
         </Link>
       </NavbarBrand>
 
-      <NavbarContent className="hidden sm:flex gap-6" justify="end">
+      <NavbarContent className="hidden gap-6 sm:flex" justify="end">
         {sections.map(({ name, slug }) => (
           <NavbarItem isActive={hash === slugToHash(slug)} key={slug}>
             <Link href={slugToHash(slug)}>{name}</Link>
