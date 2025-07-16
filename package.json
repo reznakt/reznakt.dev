@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@heroui/react": "2.8.0-beta.15",
+    "@heroui/react": "^2.8.1",
     "@react-aria/visually-hidden": "^3.8.25",
     "@react-types/shared": "^3.30.0",
     "@tailwindcss/postcss": "^4.1.11",
@@ -69,5 +69,11 @@
     "vite": "^7.0.4",
     "vite-plugin-svgr": "^4.3.0",
     "vite-tsconfig-paths": "^5.1.4"
-  }
+  },
+  "trustedDependencies": [
+    "@heroui/shared-utils",
+    "@swc/core",
+    "@tailwindcss/oxide",
+    "esbuild"
+  ]
 }
