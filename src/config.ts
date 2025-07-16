@@ -1,5 +1,6 @@
 import { FaEnvelope, FaGithub, FaGitlab, FaLinkedin } from "react-icons/fa6";
 import urlSlug from "url-slug";
+import packageJson from "../package.json" with { type: "json" };
 import IsMuIcon from "./assets/icons/is-mu.svg?react";
 
 interface Link {
@@ -9,26 +10,25 @@ interface Link {
   url: string;
 }
 
-const firstName = "Tomáš";
-const lastName = "Režňák";
+const [firstName, lastName] = packageJson.author.name.split(" ");
 
 export const author = {
   firstName,
-  fullName: `${firstName} ${lastName}`,
+  fullName: packageJson.author.name,
   lastName,
 };
 
 export const site = {
-  description: `${author.fullName}'s personal website`,
+  description: packageJson.description,
   title: author.fullName,
 };
 
 export const social: Record<string, Link> = {
   email: {
-    accountName: "tomas.reznak@volny.cz",
+    accountName: packageJson.author.email,
     icon: FaEnvelope,
     serviceName: "Email",
-    url: "mailto:tomas.reznak@volny.cz",
+    url: `mailto:${packageJson.author.email}`,
   },
   github: {
     accountName: "@reznakt",

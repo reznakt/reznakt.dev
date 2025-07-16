@@ -1,7 +1,18 @@
 {
   "name": "reznakt.dev",
+  "description": "Tomáš Režňák's personal website",
+  "author": {
+    "name": "Tomáš Režňák",
+    "email": "tomas.reznak@volny.cz",
+    "url": "https://github.com/reznakt"
+  },
+  "homepage": "https://reznakt.dev",
+  "repository": "github:reznakt/reznakt.dev",
+  "bugs": {
+    "url": "https://github.com/reznakt/reznakt.dev/issues",
+    "email": "tomas.reznak@volny.cz"
+  },
   "private": true,
-  "version": "0.0.0",
   "type": "module",
   "scripts": {
     "build": "vite build",

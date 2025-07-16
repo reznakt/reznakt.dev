@@ -4,6 +4,7 @@ import { defineConfig } from "vite";
 import ogPlugin from "vite-plugin-open-graph";
 import svgr from "vite-plugin-svgr";
 import tsconfigPaths from "vite-tsconfig-paths";
+import packageJson from "./package.json" with { type: "json" };
 
 export default defineConfig({
   plugins: [
@@ -13,11 +14,11 @@ export default defineConfig({
     svgr({ svgrOptions: { icon: true } }),
     ogPlugin({
       basic: {
-        description: "My personal website",
-        siteName: "Tomáš Režňák",
-        title: "Tomáš Režňák",
+        description: packageJson.description,
+        siteName: packageJson.name,
+        title: packageJson.author.name,
         type: "website",
-        url: "https://reznakt.dev",
+        url: packageJson.homepage,
       },
     }),
   ],
