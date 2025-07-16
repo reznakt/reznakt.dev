@@ -12,11 +12,15 @@ interface Link {
 const firstName = "Tomáš";
 const lastName = "Režňák";
 
-export const author = { firstName, lastName, name: `${firstName} ${lastName}` };
+export const author = {
+  firstName,
+  fullName: `${firstName} ${lastName}`,
+  lastName,
+};
 
 export const site = {
-  description: `${author.name}'s personal website`,
-  title: author.name,
+  description: `${author.fullName}'s personal website`,
+  title: author.fullName,
 };
 
 export const social: Record<string, Link> = {

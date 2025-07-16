@@ -1,6 +1,6 @@
 import random from "random";
 import { useMemo } from "react";
-import halo from "vanta/dist/vanta.halo.min";
+import waves from "vanta/dist/vanta.waves.min";
 import { WordRotate } from "../magicui/word-rotate";
 import { Section } from "../section";
 
@@ -22,8 +22,8 @@ export function ProjectsSection(): React.ReactElement {
     <Section
       name="Projects"
       vanta={{
-        effect: halo,
-        effectOptions: { gyroControls: true, xOffset: 0.25 },
+        effect: waves,
+        effectOptions: { gyroControls: true /*xOffset: 0.25*/ },
       }}
     >
       <div>

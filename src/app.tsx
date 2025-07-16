@@ -1,3 +1,4 @@
+import { Footer } from "./components/footer";
 import { Menu } from "./components/menu";
 import { EducationSection } from "./components/sections/education";
 import { HomeSection } from "./components/sections/home";
@@ -5,7 +6,7 @@ import { ProjectsSection } from "./components/sections/projects";
 
 export function App(): React.ReactElement {
   return (
-    <div>
+    <div className="relative">
       <header>
         <Menu />
       </header>
@@ -15,6 +16,9 @@ export function App(): React.ReactElement {
         <EducationSection />
         <ProjectsSection />
       </main>
+      <footer className="">
+        <Footer />
+      </footer>
     </div>
   );
 }
