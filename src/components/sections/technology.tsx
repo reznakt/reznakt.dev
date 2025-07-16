@@ -28,12 +28,12 @@ export function TechnologySection(): React.ReactElement {
     >
       <div>
         <h1 className="mb-4 text-5xl font-bold">Technology</h1>
-        <p className="max-w-xl mx-auto flex items-center">
+        <div className="max-w-xl mx-auto flex items-center">
           Building software in
-          <span className="m-2 font-bold text-purple-400 inline-block">
+          <div className="m-2 font-bold text-purple-400 inline-block">
             <WordRotate words={shuffledTechnologies} />
-          </span>
-        </p>
+          </div>
+        </div>
       </div>
     </Section>
   );
