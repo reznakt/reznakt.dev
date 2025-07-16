@@ -39,7 +39,7 @@ export function VantaEffect<T extends VantaBaseOptions>({
 
   return (
     <div
-      className={`relative h-full min-h-[200px] w-full ${className}`}
+      className={`relative w-full h-full min-h-[200px] ${className}`}
       ref={vantaRef}
     />
   );

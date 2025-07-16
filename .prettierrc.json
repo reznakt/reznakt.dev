@@ -5,7 +5,6 @@
     "prettier-plugin-organize-attributes",
     "prettier-plugin-organize-imports",
     "prettier-plugin-package",
-    "prettier-plugin-sh",
-    "prettier-plugin-tailwindcss"
+    "prettier-plugin-sh"
   ]
 }

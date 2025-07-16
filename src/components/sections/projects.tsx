@@ -1,8 +1,8 @@
 import random from "random";
 import { useMemo } from "react";
+import halo from "vanta/dist/vanta.halo.min";
 import { WordRotate } from "../magicui/word-rotate";
 import { Section } from "../section";
-import halo from "vanta/dist/vanta.halo.min";
 
 export function ProjectsSection(): React.ReactElement {
   const technologies = [
@@ -27,10 +27,10 @@ export function ProjectsSection(): React.ReactElement {
       }}
     >
       <div>
-        <h1 className="mb-4 text-5xl font-bold">Projects</h1>
-        <p className="mx-auto flex max-w-xl items-center">
+        <h1 className="text-5xl font-bold mb-4">Projects</h1>
+        <p className="max-w-xl mx-auto flex items-center">
           Building software in
-          <span className="m-2 inline-block font-bold text-purple-400">
+          <span className="m-2 font-bold text-purple-400 inline-block">
             <WordRotate words={shuffledTechnologies} />
           </span>
         </p>
