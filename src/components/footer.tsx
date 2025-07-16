@@ -1,10 +1,11 @@
 import { author, social } from "@/config";
-import { Link, Tooltip } from "@heroui/react";
+import { Divider, Link, Tooltip } from "@heroui/react";
 import { FaHeart, FaTurnUp } from "react-icons/fa6";
 
 export function Footer(): React.ReactElement {
   return (
-    <div className="absolute bottom-0 w-full z-100 py-2 text-muted-foreground flex justify-between items-center px-4 backdrop-blur border-t-1 bg-black/50 border-white/15">
+    <div className="absolute bottom-0 w-full z-100 py-2 text-muted-foreground flex justify-between items-center px-4 backdrop-blur bg-black/50">
+      <Divider />
       <div className="ml-[5%] flex-shrink-0 flex gap-4">
         {Object.values(social).map(
           ({ accountName, icon: Icon, serviceName, url }) => (
