@@ -3,7 +3,10 @@ import { Section } from "../section";
 
 export function EducationSection(): React.ReactElement {
   return (
-    <Section name="Education" vanta={{ effect: waves, effectOptions: {} }}>
+    <Section
+      name="Education"
+      vanta={{ effect: waves, effectOptions: { gyroControls: true } }}
+    >
       <div>
         <h1 className="text-5xl font-bold mb-4">Education</h1>
         <p className="max-w-xl mx-auto">

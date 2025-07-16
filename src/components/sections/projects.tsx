@@ -21,7 +21,10 @@ export function ProjectsSection(): React.ReactElement {
   return (
     <Section
       name="Projects"
-      vanta={{ effect: halo, effectOptions: { xOffset: 0.25 } }}
+      vanta={{
+        effect: halo,
+        effectOptions: { gyroControls: true, xOffset: 0.25 },
+      }}
     >
       <div>
         <h1 className="text-5xl font-bold mb-4">Projects</h1>

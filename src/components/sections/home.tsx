@@ -8,7 +8,11 @@ export function HomeSection(): React.ReactElement {
       name="Home"
       vanta={{
         effect: net,
-        effectOptions: { backgroundColor: 0x202020, color: 0x5070fc },
+        effectOptions: {
+          backgroundColor: 0x202020,
+          color: 0x5070fc,
+          gyroControls: true,
+        },
       }}
     >
       <div>
