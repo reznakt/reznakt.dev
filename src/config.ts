@@ -25,24 +25,25 @@ export const site = {
 
 export const social: Record<string, Link> = {
   email: {
+    accountName: "tomas.reznak@volny.cz",
     icon: FaEnvelope,
     serviceName: "Email",
     url: "mailto:tomas.reznak@volny.cz",
   },
   github: {
-    accountName: "reznakt",
+    accountName: "@reznakt",
     icon: FaGithub,
     serviceName: "GitHub",
     url: "https://github.com/reznakt",
   },
   gitlab: {
-    accountName: "reznakt",
+    accountName: "@reznakt",
     icon: FaGitlab,
     serviceName: "GitLab",
     url: "https://gitlab.com/reznakt",
   },
   linkedin: {
-    accountName: "reznakt",
+    accountName: "@reznakt",
     icon: FaLinkedin,
     serviceName: "LinkedIn",
     url: "https://linkedin.com/in/reznakt",
