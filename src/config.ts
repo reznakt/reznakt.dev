@@ -55,7 +55,13 @@ export const social: Record<string, Link> = {
   },
 };
 
-const sectionNames = ["Home", "Education", "Projects"] as const;
+const sectionNames = [
+  "Home",
+  "Education",
+  "Experience",
+  "Technology",
+  "Projects",
+] as const;
 export type SectionName = (typeof sectionNames)[number];
 
 export const sections = sectionNames.map((name) => ({
