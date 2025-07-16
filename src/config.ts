@@ -1,5 +1,6 @@
 import { FaEnvelope, FaGithub, FaGitlab, FaLinkedin } from "react-icons/fa6";
-import IsMuIcon from "./assets/icons/ismu.svg?react";
+import urlSlug from "url-slug";
+import IsMuIcon from "./assets/icons/is-mu.svg?react";
 
 interface Link {
   accountName?: string;
@@ -18,7 +19,7 @@ export const site = {
   title: author.name,
 };
 
-export const links: Record<string, Link> = {
+export const social: Record<string, Link> = {
   email: {
     icon: FaEnvelope,
     serviceName: "Email",
@@ -49,3 +50,11 @@ export const links: Record<string, Link> = {
     url: "https://is.muni.cz/person/525055",
   },
 };
+
+const sectionNames = ["Home", "Education", "Projects"] as const;
+export type SectionName = (typeof sectionNames)[number];
+
+export const sections = sectionNames.map((name) => ({
+  name,
+  slug: urlSlug(name),
+}));

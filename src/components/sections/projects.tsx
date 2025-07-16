@@ -2,7 +2,7 @@ import random from "random";
 import { useMemo } from "react";
 import halo from "vanta/dist/vanta.halo.min";
 import { WordRotate } from "../magicui/word-rotate";
-import { PageSection } from "../page-section";
+import { Section } from "../section";
 
 export function ProjectsSection(): React.ReactElement {
   const technologies = [
@@ -19,8 +19,8 @@ export function ProjectsSection(): React.ReactElement {
   }, [technologies]);
 
   return (
-    <PageSection
-      id="projects"
+    <Section
+      name="Projects"
       vanta={{ effect: halo, effectOptions: { xOffset: 0.25 } }}
     >
       <div>
@@ -32,6 +32,6 @@ export function ProjectsSection(): React.ReactElement {
           </span>
         </p>
       </div>
-    </PageSection>
+    </Section>
   );
 }
