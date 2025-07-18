@@ -1,6 +1,7 @@
 import { author, social } from "@/config";
-import { Divider, Link, Tooltip } from "@heroui/react";
+import { Divider, Link } from "@heroui/react";
 import { FaHeart, FaTurnUp } from "react-icons/fa6";
+import { SocialLink } from "./social-link";
 
 export function Footer(): React.ReactElement {
   return (
@@ -9,30 +10,14 @@ export function Footer(): React.ReactElement {
       <div className="flex justify-between items-center py-2 px-4">
         <div className="ml-[5%] flex-shrink-0 flex gap-4">
           {Object.values(social).map(
-            ({ accountName, icon: Icon, serviceName, url }) => (
-              <Tooltip
-                content={
-                  <div className="px-1 py-2">
-                    <div className="text-small font-bold flex items-center gap-2">
-                      <span className="flex items-center gap-1">
-                        <Icon />
-                        {serviceName}
-                      </span>
-                      <span className="text-tiny text-muted-foreground">
-                        {accountName}
-                      </span>
-                    </div>
-                    <Link className="text-tiny" href={url} isExternal key={url}>
-                      {url}
-                    </Link>
-                  </div>
-                }
+            ({ description, icon: Icon, serviceName, url }) => (
+              <SocialLink
+                description={description}
+                icon={Icon}
                 key={url}
-              >
-                <Link className="text-inherit" href={url} isExternal key={url}>
-                  <Icon />
-                </Link>
-              </Tooltip>
+                serviceName={serviceName}
+                url={url}
+              />
             ),
           )}
         </div>

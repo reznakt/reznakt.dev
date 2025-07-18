@@ -2,13 +2,7 @@ import { FaEnvelope, FaGithub, FaGitlab, FaLinkedin } from "react-icons/fa6";
 import urlSlug from "url-slug";
 import packageJson from "../package.json" with { type: "json" };
 import IsMuIcon from "./assets/icons/is-mu.svg?react";
-
-interface Link {
-  accountName?: string;
-  icon: React.ComponentType;
-  serviceName: string;
-  url: string;
-}
+import { SocialLinkProps } from "./components/social-link";
 
 const [firstName, lastName] = packageJson.author.name.split(" ");
 
@@ -23,33 +17,33 @@ export const site = {
   title: author.fullName,
 };
 
-export const social: Record<string, Link> = {
+export const social: Record<string, SocialLinkProps> = {
   email: {
-    accountName: packageJson.author.email,
+    description: packageJson.author.email,
     icon: FaEnvelope,
     serviceName: "Email",
     url: `mailto:${packageJson.author.email}`,
   },
   github: {
-    accountName: "@reznakt",
+    description: "@reznakt",
     icon: FaGithub,
     serviceName: "GitHub",
     url: "https://github.com/reznakt",
   },
   gitlab: {
-    accountName: "@reznakt",
+    description: "@reznakt",
     icon: FaGitlab,
     serviceName: "GitLab",
     url: "https://gitlab.com/reznakt",
   },
   linkedin: {
-    accountName: "@reznakt",
+    description: "@reznakt",
     icon: FaLinkedin,
     serviceName: "LinkedIn",
     url: "https://linkedin.com/in/reznakt",
   },
   muni: {
-    accountName: "525055",
+    description: "525055",
     icon: IsMuIcon,
     serviceName: "IS MU",
     url: "https://is.muni.cz/person/525055",
