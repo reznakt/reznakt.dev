@@ -15,6 +15,7 @@ import { CollapsibleText } from "./collapsible-text";
 import { SocialLink, SocialLinkProps } from "./social-link";
 
 export interface EducationCardProps {
+  className?: string;
   endDate?: Date;
   institution: {
     logo: React.ComponentType<{ className: string }>;
@@ -35,6 +36,7 @@ export interface EducationCardProps {
 }
 
 export function EducationCard({
+  className = "",
   endDate,
   institution,
   program,
@@ -50,7 +52,7 @@ export function EducationCard({
   }
 
   return (
-    <Card className="w-xl" isBlurred>
+    <Card className={`w-xl ${className}`} isBlurred>
       <CardHeader>
         <div className="flex items-center gap-4">
           <Logo className="w-auto h-20" />

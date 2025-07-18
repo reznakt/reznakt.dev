@@ -1,6 +1,6 @@
-import { author, social } from "@/config";
 import { Divider, Link } from "@heroui/react";
 import { FaHeart, FaTurnUp } from "react-icons/fa6";
+import { author, social } from "../config";
 import { SocialLink } from "./social-link";
 
 export function Footer(): React.ReactElement {
