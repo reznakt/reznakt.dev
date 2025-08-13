@@ -22,6 +22,8 @@ export const site = {
   title: author.fullName,
 };
 
+export const links = { cv: "https://cv.reznakt.dev/" };
+
 export const social = {
   email: {
     description: packageJson.author.email,

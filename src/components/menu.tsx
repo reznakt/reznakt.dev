@@ -1,7 +1,8 @@
-import { sections } from "@/config";
+import { links, sections } from "@/config";
 import { useHash } from "@/hooks/hash";
 import { slugToHash } from "@/lib/utils";
 import {
+  Button,
   Link,
   Navbar,
   NavbarBrand,
@@ -12,7 +13,7 @@ import {
   NavbarMenuToggle,
 } from "@heroui/react";
 import { useState } from "react";
-import { FaTerminal } from "react-icons/fa6";
+import { FaDownload, FaTerminal } from "react-icons/fa6";
 
 export function Menu(): React.ReactElement {
   const hash = useHash({
@@ -59,6 +60,18 @@ export function Menu(): React.ReactElement {
             <Link href={slugToHash(slug)}>{name}</Link>
           </NavbarItem>
         ))}
+        <NavbarItem className="ml-4">
+          <Button
+            as="a"
+            color="default"
+            href={links.cv}
+            startContent={<FaDownload />}
+            target="_blank"
+            variant="bordered"
+          >
+            Download CV
+          </Button>
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarMenuToggle
@@ -82,6 +95,18 @@ export function Menu(): React.ReactElement {
             </Link>
           </NavbarMenuItem>
         ))}
+        <NavbarMenuItem>
+          <Link
+            className="flex items-center gap-2"
+            href={links.cv}
+            isExternal
+            onPress={() => {
+              setIsMenuOpen(false);
+            }}
+          >
+            <FaDownload /> Download CV
+          </Link>
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );
