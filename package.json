@@ -3,14 +3,14 @@
   "description": "Tomáš Režňák's personal website",
   "author": {
     "name": "Tomáš Režňák",
-    "email": "tomas.reznak@volny.cz",
+    "email": "tomas.reznak@proton.me",
     "url": "https://github.com/reznakt"
   },
   "homepage": "https://reznakt.dev",
   "repository": "github:reznakt/reznakt.dev",
   "bugs": {
     "url": "https://github.com/reznakt/reznakt.dev/issues",
-    "email": "tomas.reznak@volny.cz"
+    "email": "tomas.reznak@proton.me"
   },
   "private": true,
   "type": "module",
