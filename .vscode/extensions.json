@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "aaron-bond.better-comments",
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "oven.bun-vscode",
+    "SanaAjani.taskrunnercode",
+    "YoavBls.pretty-ts-errors"
+  ]
+}
