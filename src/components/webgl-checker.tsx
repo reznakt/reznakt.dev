@@ -18,14 +18,12 @@ export function WebGlChecker(): React.ReactElement {
     false,
   );
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [checked, setChecked] = useLocalstorageState<boolean>(false);
 
   useEffect(() => {
     if (!skipWebGlCheck && !isWebGLSupported() && !isWebGL2Supported()) {
-      setSkipWebGlCheck(true);
       onOpen();
     }
-  }, [skipWebGlCheck, setSkipWebGlCheck]);
+  }, [skipWebGlCheck, onOpen]);
 
   return (
     <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
@@ -49,19 +47,12 @@ export function WebGlChecker(): React.ReactElement {
             <ModalFooter className="flex flex-col gap-5">
               <Checkbox
                 className="mt-4"
-                defaultSelected={false}
-                onChange={({ target: { checked } }) => setChecked(checked)}
+                isSelected={skipWebGlCheck}
+                onValueChange={setSkipWebGlCheck}
               >
                 Skip this check in the future
               </Checkbox>
-              <Button
-                onPress={() => {
-                  onClose();
-                  setSkipWebGlCheck(checked);
-                }}
-              >
-                Dismiss
-              </Button>
+              <Button onPress={onClose}>Dismiss</Button>
             </ModalFooter>
           </>
         )}
