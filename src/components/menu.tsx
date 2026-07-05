@@ -1,5 +1,5 @@
 import { links, sections } from "@/config";
-import { useHash } from "@/hooks/hash";
+import { useSectionNavigation } from "@/hooks/section-navigation";
 import { slugToHash } from "@/lib/utils";
 import {
   Button,
@@ -15,11 +15,10 @@ import {
 import { useState } from "react";
 import { FaDownload, FaTerminal } from "react-icons/fa6";
 
+const sectionSlugs = sections.map(({ slug }) => slug);
+
 export function Menu(): React.ReactElement {
-  const hash = useHash({
-    allowedHashes: sections.map(({ slug }) => slugToHash(slug)),
-    defaultHash: "#home",
-  });
+  const { activeSlug, navigateTo } = useSectionNavigation(sectionSlugs);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -48,7 +47,13 @@ export function Menu(): React.ReactElement {
       maxWidth="xl"
     >
       <NavbarBrand>
-        <Link className="font-bold flex gap-4" href="#home">
+        <Link
+          className="font-bold flex gap-4"
+          href="#home"
+          onPress={() => {
+            navigateTo("home");
+          }}
+        >
           <FaTerminal size={24} />
           Tomáš Režňák
         </Link>
@@ -56,8 +61,15 @@ export function Menu(): React.ReactElement {
 
       <NavbarContent className="hidden sm:flex gap-6" justify="end">
         {sections.map(({ name, slug }) => (
-          <NavbarItem isActive={hash === slugToHash(slug)} key={slug}>
-            <Link href={slugToHash(slug)}>{name}</Link>
+          <NavbarItem isActive={activeSlug === slug} key={slug}>
+            <Link
+              href={slugToHash(slug)}
+              onPress={() => {
+                navigateTo(slug);
+              }}
+            >
+              {name}
+            </Link>
           </NavbarItem>
         ))}
         <NavbarItem className="ml-4">
@@ -84,10 +96,11 @@ export function Menu(): React.ReactElement {
 
       <NavbarMenu>
         {sections.map(({ name, slug }) => (
-          <NavbarMenuItem isActive={hash === slugToHash(slug)} key={slug}>
+          <NavbarMenuItem isActive={activeSlug === slug} key={slug}>
             <Link
               href={slugToHash(slug)}
               onPress={() => {
+                navigateTo(slug);
                 setIsMenuOpen(false);
               }}
             >
