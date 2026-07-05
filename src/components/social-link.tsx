@@ -26,14 +26,13 @@ export function SocialLink({
               {description}
             </span>
           </div>
-          <Link className="text-tiny" href={url} isExternal key={url}>
+          <Link className="text-tiny" href={url} isExternal>
             {url}
           </Link>
         </div>
       }
-      key={url}
     >
-      <Link className="text-inherit" href={url} isExternal key={url}>
+      <Link className="text-inherit" href={url} isExternal>
         <Icon />
       </Link>
     </Tooltip>

@@ -93,18 +93,20 @@ export function EducationCard({
             <div className="p-6 space-y-6">
               <div className="flex justify-between items-start">
                 <h4 className="font-semibold">{thesis.title}</h4>
-                <Tooltip
-                  content={
-                    <div className="p-2 flex items-center gap-2">
-                      <FaAward color="gold" />
-                      Dean's Award for an Outstanding Final Thesis
-                    </div>
-                  }
-                >
-                  <Chip variant="faded">
-                    <FaAward className="inline" color="gold" /> Dean's Award
-                  </Chip>
-                </Tooltip>
+                {thesis.award && (
+                  <Tooltip
+                    content={
+                      <div className="p-2 flex items-center gap-2">
+                        <FaAward color="gold" />
+                        Dean's Award for an Outstanding Final Thesis
+                      </div>
+                    }
+                  >
+                    <Chip variant="faded">
+                      <FaAward className="inline" color="gold" /> Dean's Award
+                    </Chip>
+                  </Tooltip>
+                )}
               </div>
               <CollapsibleText className="text-sm text-muted-foreground">
                 {thesis.abstract}

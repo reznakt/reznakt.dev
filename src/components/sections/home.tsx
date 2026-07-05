@@ -2,15 +2,14 @@ import net from "vanta/dist/vanta.net.min";
 import { AuroraText } from "../magicui/aurora-text";
 import { Section } from "../section";
 
+const vanta = {
+  effect: net,
+  effectOptions: { backgroundColor: 0x202020, color: 0x5070fc },
+};
+
 export function HomeSection(): React.ReactElement {
   return (
-    <Section
-      name="Home"
-      vanta={{
-        effect: net,
-        effectOptions: { backgroundColor: 0x202020, color: 0x5070fc },
-      }}
-    >
+    <Section name="Home" vanta={vanta}>
       <div>
         <h1 className="text-5xl font-bold mb-4">
           Hi, I'm

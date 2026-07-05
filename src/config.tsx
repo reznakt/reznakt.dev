@@ -1,10 +1,7 @@
 import { FaEnvelope, FaGithub, FaGitlab, FaLinkedin } from "react-icons/fa6";
 import urlSlug from "url-slug";
 import packageJson from "../package.json" with { type: "json" };
-import {
-  default as IsMu,
-  default as IsMuIcon,
-} from "./assets/icons/is-mu.svg?react";
+import IsMuIcon from "./assets/icons/is-mu.svg?react";
 import MuniFi from "./assets/icons/muni-fi.svg?react";
 import { EducationCardProps } from "./components/education-card";
 import { SocialLinkProps } from "./components/social-link";
@@ -125,7 +122,7 @@ export const education = {
       links: [
         {
           description: "Thesis Archive",
-          icon: IsMu,
+          icon: IsMuIcon,
           serviceName: "IS MU",
           url: "https://is.muni.cz/th/ddfps/",
         },

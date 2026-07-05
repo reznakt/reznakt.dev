@@ -1,5 +1,4 @@
-import { useRef, useState } from "react";
-import { useAsyncEffect } from "rooks";
+import { useEffect, useRef } from "react";
 
 export interface VantaEffectProps<T extends VantaBaseOptions> {
   /** Additional class names for the background container */
@@ -27,28 +26,34 @@ export function VantaEffect<T extends VantaBaseOptions>({
   effect,
   effectOptions,
 }: Readonly<VantaEffectProps<T>>): React.ReactElement {
-  const [vantaEffect, setVantaEffect] = useState<null | VantaEffect>(null);
+  const effectInstanceRef = useRef<null | VantaEffect>(null);
   const vantaRef = useRef<HTMLDivElement>(null);
 
-  useAsyncEffect(async () => {
-    if (!vantaEffect) {
+  useEffect(() => {
+    const state = { cancelled: false };
+
+    void (async () => {
       const [p5, three] = await Promise.all([import("p5"), import("three")]);
 
-      setVantaEffect(
-        effect({
-          p5: p5.default,
-          THREE: three,
-          ...DEFAULT_EFFECT_OPTIONS,
-          ...(effectOptions as T),
-          el: vantaRef.current,
-        }),
-      );
-    }
+      if (state.cancelled || !vantaRef.current) {
+        return;
+      }
+
+      effectInstanceRef.current = effect({
+        p5: p5.default,
+        THREE: three,
+        ...DEFAULT_EFFECT_OPTIONS,
+        ...(effectOptions as T),
+        el: vantaRef.current,
+      });
+    })();
 
     return () => {
-      if (vantaEffect) {
-        vantaEffect.destroy();
-        setVantaEffect(null);
+      state.cancelled = true;
+
+      if (effectInstanceRef.current) {
+        effectInstanceRef.current.destroy();
+        effectInstanceRef.current = null;
       }
     };
   }, [effect, effectOptions]);
